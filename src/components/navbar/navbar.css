@@ -1,0 +1,225 @@
+.note__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 6rem;
+    background: rgba(94, 34, 106, 0.1);
+    box-shadow: 1px 0 100px rgba(94, 34, 106, 0.9);
+}
+
+.note__navbar-links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-right: 1.9rem;
+    font-family: var(--font-family);
+}
+
+.note__navbar-links_logo img {
+    width: 62px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.links {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+}
+
+.links::before,
+.links::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+.links::before {
+    background-color: violet;
+    height: 2px;
+    bottom: 0;
+    transform-origin: 100% 50%;
+    transform: scaleX(0);
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.links::after {
+    content: attr(data-replace);
+    height: 100%;
+    top: 0;
+    transform-origin: 100% 50%;
+    transform: translate3d(200%, 0, 0);
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+    color: #54b3d6;
+}
+
+.links:hover::before {
+    transform-origin: 0% 50%;
+    transform: scaleX(1);
+}
+
+.links:hover::after {
+    transform: translate3d(0, 0, 0);
+}
+
+.links span {
+    display: inline-block;
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.links:hover span {
+    transform: translate3d(-200%, 0, 0);
+}
+
+.links:hover {
+    color: rgb(255, 0, 255);
+}
+
+.note__navbar-links_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.note__navbar-sign {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.note__navbar-links_container p,
+.note__navbar-sign p,
+.note__navbar-menu_container p {
+    color: #ffff;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: capitalize;
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+.note__navbar-sign button,
+.note__navbar-menu_container button {
+    padding: 0.5rem 1rem;
+    color: #ffff;
+    background: #bb0fde;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    border-radius: 5px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+.note__navbar-menu {
+    margin-left: 1rem;
+
+    display: none;
+    position: relative;
+}
+
+.note__navbar-menu svg {
+    cursor: pointer;
+}
+
+.note__navbar-menu_container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    z-index: 10;
+
+    text-align: end;
+    background: var(--color-footer);
+    padding: 2rem;
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    margin-top: 1rem;
+    min-width: 210px;
+    border-radius: 5px;
+    box-shadow: 1 0 5 rgba(211, 7, 194, 0.388);
+}
+
+.note__navbar-menu_container p {
+    margin: 1rem 0;
+}
+
+.note__navbar-menu_container-links-sign {
+    display: none;
+}
+
+.note__navbar-profile {
+    display: flex;
+    justify-content: end;
+    width: 5%;
+}
+
+.note__navbar-profile_circle {
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 41px;
+    outline: 10px;
+    height: 41px;
+    overflow: hidden;
+    cursor: pointer;
+
+    background: #bb0fde;
+
+}
+
+.note__navbar-profile_circle img {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+@media screen and (max-width:1050px) {
+    .note__navbar-links_container {
+        display: none;
+    }
+
+    .note__navbar-menu {
+        display: flex;
+
+    }
+}
+
+@media screen and (max-width:700px) {
+    .note__navbar {
+        padding: 2rem 4rem;
+    }
+
+    .note__navbar-links_logo h3 {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .note__navbar {
+        padding: 2rem;
+    }
+
+    .note__navbar-sign {
+        display: none;
+    }
+
+    .note__navbar-menu_container {
+        top: 20px;
+
+    }
+
+    .note__navbar-menu_container-links-sign {
+        display: block;
+    }
+}
