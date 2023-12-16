@@ -5,7 +5,7 @@ import { Icon } from '@iconify/react';
 
 
 const Login = (props) => {
-    const host = 'https://backend-chi-eight-74.vercel.app';
+    const host = 'https://snap-note-backend.vercel.app';
     let navigate = useNavigate();
     const [cred, setCred] = useState({ email: '', password: '' });
 
