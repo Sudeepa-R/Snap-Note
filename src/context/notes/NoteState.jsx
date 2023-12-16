@@ -2,7 +2,7 @@ import { useState } from "react";
 import noteContext from "./noteContext";
 
 const NoteState = (props) => {
-    const host = 'https://snap-note-backend.vercel.app/'
+    const host = 'https://snap-note-backend.vercel.app'
     const notesInitial = [];
     const [notes, setNotes] = useState(notesInitial);
     // users 
