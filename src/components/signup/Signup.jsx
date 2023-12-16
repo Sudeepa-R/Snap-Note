@@ -4,7 +4,7 @@ import './signup.css'
 import { Icon } from '@iconify/react';
 
 const Signup = (props) => {
-    const host = 'https://backend-chi-eight-74.vercel.app';
+    const host = 'https://snap-note-backend.vercel.app/';
     let navigate = useNavigate();
     const [cred, setCred] = useState({ name: '', email: '', password: ''})
     const { name, email, password } = cred; // destructuring
